@@ -1,0 +1,15 @@
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\Ceng382_23_24_s_202011034.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\Ceng382_23_24_s_202011034.AssemblyInfoInputs.cache
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\Ceng382_23_24_s_202011034.AssemblyInfo.cs
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\Ceng382_23_24_s_202011034.csproj.CoreCompileInputs.cache
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\Ceng382_23_24_s_202011034.sourcelink.json
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\bin\Debug\net8.0\Ceng382_23_24_s_202011034.exe
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\bin\Debug\net8.0\Ceng382_23_24_s_202011034.deps.json
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\bin\Debug\net8.0\Ceng382_23_24_s_202011034.runtimeconfig.json
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\bin\Debug\net8.0\Ceng382_23_24_s_202011034.dll
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\bin\Debug\net8.0\Ceng382_23_24_s_202011034.pdb
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\Ceng382_23_24_s_202011034.dll
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\refint\Ceng382_23_24_s_202011034.dll
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\Ceng382_23_24_s_202011034.pdb
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\Ceng382_23_24_s_202011034.genruntimeconfig.cache
+C:\Users\can26\Documents\GitHub\Ceng382_23_24_s_202011034\obj\Debug\net8.0\ref\Ceng382_23_24_s_202011034.dll
