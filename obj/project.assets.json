@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\can26\\.nuget\\packages\\": {}
+    "C:\\Users\\cans7\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\can26\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Ceng382_23_24_s_202011034.csproj",
+      "projectUniqueName": "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Ceng382_23_24_s_202011034.csproj",
       "projectName": "Ceng382_23_24_s_202011034",
-      "projectPath": "C:\\Users\\can26\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Ceng382_23_24_s_202011034.csproj",
-      "packagesPath": "C:\\Users\\can26\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\can26\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\obj\\",
+      "projectPath": "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Ceng382_23_24_s_202011034.csproj",
+      "packagesPath": "C:\\Users\\cans7\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\can26\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cans7\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
