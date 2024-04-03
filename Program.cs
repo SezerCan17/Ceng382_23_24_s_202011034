@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel.Design; // File sınıfı için gerekli olan kütüphane
 
 public class RoomData
 {
-
     [JsonPropertyName("Room")]
     public Room[]? Rooms { get; set; }
 }
@@ -21,9 +24,7 @@ public class Room
 
     [JsonPropertyName("capacity")]
     public int capacity { get; set; }
-
 }
-
 
 class Program
 {
@@ -31,17 +32,16 @@ class Program
     {
         ReservationHandler reservationHandler = new ReservationHandler();
 
-        //path to json
+        // JSON dosyasının okunması
         string jsonFilePath = "Data.json";
         string jsonString = File.ReadAllText(jsonFilePath);
 
-        //options to read
+        // JSON verisinin RoomData nesnesine dönüştürülmesi
         var options = new JsonSerializerOptions()
         {
             NumberHandling = JsonNumberHandling.AllowReadingFromString |
-            JsonNumberHandling.WriteAsString
+                             JsonNumberHandling.WriteAsString
         };
-
 
         var roomData = JsonSerializer.Deserialize<RoomData>(jsonString, options);
 
@@ -49,129 +49,136 @@ class Program
         {
             foreach (var room in roomData.Rooms)
             {
-                Console.WriteLine($"Room ID : {room.roomId}, Name:{room.roomName},Capacity : {room.capacity}");
+                Console.WriteLine($"Room ID : {room.roomId}, Name:{room.roomName}, Capacity : {room.capacity}");
             }
         }
 
-        Console.WriteLine("Choose:");
-        Console.WriteLine("a) Add");
-        Console.WriteLine("b) Delete");
-        Console.WriteLine("c) Display");
-        string a = Console.ReadLine();
+        string choice;
 
-
-
-        switch (a)
+        do
         {
-            case "a":
-                Console.WriteLine("Write Date Time:");
-                DateTime date = DateTime.Parse(Console.ReadLine());
-                Console.WriteLine(date);
-                Console.WriteLine("Write Time:");
-                DateTime time = DateTime.Parse(Console.ReadLine());
-                Console.WriteLine(time);
+            Console.WriteLine("Choose:");
+            Console.WriteLine("a) Add");
+            Console.WriteLine("b) Delete");
+            Console.WriteLine("c) Display");
+            Console.WriteLine("d) Exit");
+            choice = Console.ReadLine();
 
-                Console.WriteLine("Enter your name:");
-                string name = Console.ReadLine();
-                Console.WriteLine(name);
+            switch (choice)
+            {
+                case "a":
+                    Console.WriteLine("Write Date Time:");
+                    DateTime date = DateTime.Parse(Console.ReadLine());
+                    Console.WriteLine("Write Time:");
+                    DateTime time = DateTime.Parse(Console.ReadLine());
 
-                Console.WriteLine("Enter Room Id");
-                string Id = Console.ReadLine();
+                    int hour = time.Hour;
+                    int idx = 0;
 
-                if (roomData?.Rooms != null)
-                {
-                    foreach (var room_Id in roomData.Rooms)
+                    for (int i = 0; i < 16; i++)
                     {
-                        Console.WriteLine(room_Id.roomId + "This is room ID");
-                        if (room_Id.roomId == Id)
+                        if (i == hour)
                         {
-                            break;
-
-                        }
-                        else
-                        {
-                            Console.WriteLine("Don't have this Id");
+                            idx = i;
+                            Console.WriteLine(roomData.Rooms[i].roomName);
                         }
                     }
-                }
 
-                Console.WriteLine(Id + "BUUUU!!!");
+                    Console.WriteLine("Enter your name:");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Enter Room Id");
+                    string Id = Console.ReadLine();
 
-                Console.WriteLine("Enter Room name:");
-                string rName = Console.ReadLine();
+                    Reservation reservation = new Reservation(date, time, name, roomData.Rooms[idx]);
+                    reservationHandler.addReservation(reservation);
+                    break;
 
-                if(roomData?.Rooms != null)
-                {
-                    foreach (var room_name in roomData.Rooms)
-                    {
-                        Console.WriteLine(room_name.roomName+ "This is room name");
-                        if (room_name.roomName == rName)
-                        {
-                            break;
+                case "b":
+                    reservationHandler.deleteReservation();
+                    break;
 
-                        }
-                        else
-                        {
-                            Console.WriteLine("Don't have this name");
-                        }
-                    }
-                }
+                case "c":
+                    reservationHandler.displayWeeklySchedule();
+                    break;
 
-                Console.WriteLine(rName + "BUUUU!!!");
+                case "d":
+                    Console.WriteLine("Exiting...");
+                    break;
 
-                
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
 
-
-
-                break;
-
-            case "b":
-                break;
-
-            case "c":
-                break;
-
-            default:
-                break;
-        }
-
-
-
-
-
-        //reservationHandler.addReservation(reservation1);
-        //reservationHandler.deleteReservation(reservation1);
-
-
+        } while (choice != "d");
     }
 }
 
-
 class ReservationHandler
 {
-    private Reservation[,] reservations = new Reservation[7, 24];
+    private Reservation[,] reservations = new Reservation[7, 16];
 
     public void addReservation(Reservation reservation)
     {
         int dayOfWeek = (int)reservation.date.DayOfWeek;
         int timeOfDay = reservation.time.Hour;
         reservations[dayOfWeek, timeOfDay] = reservation;
-
+        Console.WriteLine("Reservation added successfully!");
     }
 
-    public void deleteReservation(Reservation reservation)
+    public void deleteReservation()
     {
-        int dayOfWeek = (int)reservation.date.DayOfWeek;
-        int timeOfDay = reservation.time.Hour;
-        reservations[dayOfWeek, timeOfDay] = null;
+        Console.WriteLine("Enter Name: ");
+        string name = Console.ReadLine();
+        bool deleted = false;
 
-        Console.WriteLine(reservations[dayOfWeek, timeOfDay]);
+        for (int i = 0; i < 7; i++)
+        {
+            for (int j = 0; j < 16; j++)
+            {
+                if (reservations[i, j] != null && reservations[i, j].reserverName == name)
+                {
+                    Console.WriteLine("Reservation found at: " + i + " " + j);
+                    reservations[i, j] = null;
+                    deleted = true;
+                }
+            }
+        }
 
+        if (deleted)
+        {
+            Console.WriteLine("Reservation deleted successfully!");
+        }
+        else
+        {
+            Console.WriteLine("No reservation found with that name.");
+        }
     }
 
     public void displayWeeklySchedule()
     {
+        string[] daysOfWeek = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 
+        for (int dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++)
+        {
+            Console.WriteLine(daysOfWeek[dayOfWeek] + " Schedule:");
+
+            for (int timeOfDay = 0; timeOfDay < 16; timeOfDay++)
+            {
+                Reservation reservation = reservations[dayOfWeek, timeOfDay];
+
+                if (reservation != null)
+                {
+                    Console.WriteLine($"Time: {timeOfDay}:00 - {timeOfDay + 1}:00, Reserver: {reservation.reserverName}, Room: {reservation.room.roomName}");
+                }
+                else
+                {
+                    Console.WriteLine($"Time: {timeOfDay}:00 - {timeOfDay + 1}:00, Available");
+                }
+            }
+
+            Console.WriteLine();
+        }
     }
 }
 
@@ -189,9 +196,4 @@ class Reservation
         reserverName = reserverName_;
         room = room_;
     }
-
-
-
 }
-
-
