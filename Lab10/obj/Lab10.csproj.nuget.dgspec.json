@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj": {}
+    "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj": {}
   },
   "projects": {
-    "c:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj": {
+    "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj",
+        "projectUniqueName": "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj",
         "projectName": "Lab10",
-        "projectPath": "c:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj",
+        "projectPath": "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj",
         "packagesPath": "C:\\Users\\cans7\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\obj\\",
+        "outputPath": "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cans7\\AppData\\Roaming\\NuGet\\NuGet.Config"

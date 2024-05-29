@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lJMN3kyO2eZbw8OwcKLyvLqSGm0WVGjtKrB176MSzwbJUrsxwxh/IhXuenD7fImzfuxztuE1h/clFpWwxkzpxQ==",
+  "dgSpecHash": "0ZBKbx5dETagtUSymTJqUE6/4qh7Q4uasQvYl41BEJR/qIFFzzt860S9l1K1VQoCR/6DESv1nf3+KKc1QK0kTw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj",
+  "projectFilePath": "C:\\Users\\cans7\\Documents\\GitHub\\Ceng382_23_24_s_202011034\\Lab10\\Lab10.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cans7\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\cans7\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
