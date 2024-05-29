@@ -47,7 +47,7 @@ namespace MyApp.Namespace
                 errorMessage = ex.Message;
                 return;
             }
-            Response.Redirect("/HERE/OtherPage");
+            Response.Redirect("/LookatTheRoom");
         }
     }
 }
